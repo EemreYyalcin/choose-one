@@ -1,18 +1,18 @@
 .questions-boards {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
     margin: auto;
     width: 1700px;
     /*height: 495px;*/
 }
 
 .questions-boards img {
-    width: 500px;
+    width: 600px;
     height: 700px;
 }
 
 .questions-boards div {
-    width: 200px;
+    width: 300px;
 }
 
 
