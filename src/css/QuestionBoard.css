@@ -1,0 +1,34 @@
+.questions-boards {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin: auto;
+    width: 1700px;
+    /*height: 495px;*/
+}
+
+.questions-boards img {
+    width: 500px;
+    height: 700px;
+}
+
+.questions-boards div {
+    width: 200px;
+}
+
+
+.questions-child-boards {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+    /*height: 495px;*/
+}
+
+
+.questionBoard {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    background-color: white;
+    width: 500px;
+    margin: auto;
+}
