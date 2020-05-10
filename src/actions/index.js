@@ -11,3 +11,12 @@ export const signOptions = (user) => {
         payload: user
     };
 };
+
+
+export const selectRouter = (route) => {
+    return {
+        type: 'SELECT_ROUTE',
+        payload: route
+    };
+};
+

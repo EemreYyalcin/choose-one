@@ -3,7 +3,6 @@ import {Button, Container, Header, Icon, Menu, Responsive, Segment, Visibility,}
 import {signState} from '../../actions'
 import {connect} from "react-redux";
 import GoogleApi from "../login/GoogleApi";
-import {QUESTION} from "../../helper/PathHelper";
 import {NavLink} from "react-router-dom";
 
 
@@ -36,12 +35,6 @@ const HomepageHeading = ({mobile}) => (
                 marginTop: mobile ? '0.5em' : '1.5em',
             }}
         />
-        <NavLink to={QUESTION}>
-        <Button primary size='huge'>
-            Get Started
-            <Icon name='right arrow'/>
-        </Button>
-        </NavLink>
         {/*    Get Started*/}
         {/*    <Icon name='right arrow'/>*/}
     </Container>

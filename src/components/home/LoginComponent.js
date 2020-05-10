@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {Button, Form, Grid, Header, Image, Message, Segment} from 'semantic-ui-react'
-import {signOptions} from "../../actions";
+import {signOptions, selectRouter} from "../../actions";
 import {connect} from 'react-redux';
 import axios from 'axios';
 import {SERVER} from "../../helper/PathHelper";
@@ -30,13 +30,18 @@ class LoginComponent extends PureComponent {
         await axios.post(SERVER + "/login", {"username": this.state.username, "password": this.state.password})
             .then(res => {
                 console.log("RESPONSE:", res);
+                this.props.signOptions(res.data.data);
+                this.props.selectRouter(1);
+                localStorage.setItem("LoginToken", res.data.data.token)
+                localStorage.setItem("LoginUsername", res.data.data.username)
             })
             .catch(error => {
                 console.log("ERROR:", error);
+                this.props.selectRouter(3);
             })
     }
 
-    loginForm() {
+    render() {
         return (
             <Grid textAlign='center' style={{height: '100vh'}} verticalAlign='middle'>
                 <Grid.Column style={{maxWidth: 450}}>
@@ -69,15 +74,6 @@ class LoginComponent extends PureComponent {
             </Grid>
         );
     }
-
-
-    render() {
-        return (
-            <div>
-                {this.loginForm()}
-            </div>
-        );
-    }
 }
 
 const mapStateToProps = (state) => {
@@ -86,5 +82,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    {signOptions}
+    {signOptions, selectRouter}
 )(LoginComponent);

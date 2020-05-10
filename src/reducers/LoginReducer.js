@@ -3,10 +3,9 @@ let user = {
     token: ""
 };
 
-export const LoginReducer = (state = null, action) => {
+export const LoginReducer = (state = user, action) => {
     if (action.type === 'SIGN_OPTIONS') {
-        user = action.payload;
-        return {...state, user};
+        return  action.payload;
     }
     return state;
 };

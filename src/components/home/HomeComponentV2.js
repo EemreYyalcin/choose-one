@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Container, Menu, Segment,} from 'semantic-ui-react';
 import {signState} from '../../actions'
 import {connect} from "react-redux";
-import GoogleApi from "../login/GoogleApi";
+import LoginApi from "../login/LoginApi";
 
 
 class HomeComponent extends Component {
@@ -25,11 +25,11 @@ class HomeComponent extends Component {
                     size='large'
                 >
                     <Container>
-                        <Menu.Item as='a' active>
+                        <Menu.Item as='a' active >
                             Home
                         </Menu.Item>
                         <Menu.Item position='right'>
-                            <GoogleApi/>
+                            <LoginApi/>
                         </Menu.Item>
                     </Container>
                 </Menu>
