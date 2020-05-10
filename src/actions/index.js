@@ -4,3 +4,10 @@ export const signState = (auth) => {
         payload: auth
     };
 };
+
+export const signOptions = (user) => {
+    return {
+        type: 'SIGN_OPTIONS',
+        payload: user
+    };
+};
