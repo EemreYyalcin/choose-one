@@ -4,11 +4,15 @@ import {selectRouter} from "../../actions";
 import QuestionComponent from "../question/QuestionComponent";
 import LoginComponent from "./LoginComponent";
 import LoginApi from "../login/LoginApi";
+import QuestionResultComponent from "../question/QuestionResultComponent";
 
 class HomeComponentV3 extends PureComponent {
 
     constructor(props) {
         super(props);
+
+
+
     }
 
     selectColumn(index) {
@@ -35,6 +39,13 @@ class HomeComponentV3 extends PureComponent {
                 <LoginComponent/>
             </div>);
         }
+
+        if (this.props.selectRoute === 4) {
+            return (<div>
+                <QuestionResultComponent/>
+            </div>);
+        }
+
     }
 
     selectMenuClick = (index) => {
@@ -49,6 +60,14 @@ class HomeComponentV3 extends PureComponent {
                 </a>
             );
         }
+        if (this.props.selectRoute === 4){
+            return (
+                <a className={this.selectColumn(4)} onClick={() => this.selectMenuClick(4)}>
+                    Result
+                </a>
+            );
+        }
+
     }
 
     render() {
